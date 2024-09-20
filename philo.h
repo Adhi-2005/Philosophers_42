@@ -6,7 +6,7 @@
 /*   By: adshafee <adshafee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 08:14:31 by adshafee          #+#    #+#             */
-/*   Updated: 2024/09/13 17:28:04 by adshafee         ###   ########.fr       */
+/*   Updated: 2024/09/18 20:50:05 by adshafee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,6 @@ void	ft_mutex(t_philo *philo, int lock_flag);
 void	lock_order(t_philo *philo);
 long	n_timestamp(struct timeval *time);
 size_t	timestamp_new(void);
-
-void	*monitor(void *arg);
 
 //argumet checking related functions...
 

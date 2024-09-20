@@ -6,7 +6,7 @@
 /*   By: adshafee <adshafee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 08:14:17 by adshafee          #+#    #+#             */
-/*   Updated: 2024/09/14 14:19:51 by adshafee         ###   ########.fr       */
+/*   Updated: 2024/09/19 11:42:52 by adshafee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,6 @@ int	main(int argc, char **argv)
 {
 	t_philo		philo[MAX_PHILOS];
 	int			i;
-	pthread_t	monitor_thread;
 
 	i = 0;
 	if (error_arg(argc, argv))
@@ -87,11 +86,9 @@ int	main(int argc, char **argv)
 		usleep(100);
 		i++;
 	}
-	pthread_create(&monitor_thread, NULL, monitor, (void *)philo);
 	i = -1;
 	while (++i < ft_atoi(argv[1]))
 		pthread_join(philo[i].thread, NULL);
-	pthread_join(monitor_thread, NULL);
 	free(philo->philo_info);
 	return (0);
 }
